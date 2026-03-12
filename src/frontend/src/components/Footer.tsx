@@ -39,7 +39,7 @@ export default function Footer() {
                 <Instagram size={15} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@maheshwarisari?si=kRRDCc9Se0bwJNTO"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ border: "1.5px solid oklch(0.65 0.14 65)" }}
@@ -130,7 +130,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://youtube.com"
+                  href="https://youtube.com/@maheshwarisari?si=kRRDCc9Se0bwJNTO"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[oklch(0.35_0.07_55)] hover:text-[oklch(0.45_0.16_60)] transition-colors font-medium"

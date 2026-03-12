@@ -125,18 +125,6 @@ export default function HomePage() {
     "linear-gradient(135deg, oklch(0.40 0.10 270) 0%, oklch(0.30 0.08 270) 100%)",
   ];
 
-  const instagramPosts = [
-    {
-      caption: "Weaving tradition, thread by thread",
-      bg: "oklch(0.38 0.14 25)",
-    },
-    { caption: "The art of Maheshwari silk", bg: "oklch(0.48 0.12 195)" },
-    { caption: "Gold zari magic under sunlight", bg: "oklch(0.65 0.12 82)" },
-    { caption: "Artisan at the loom", bg: "oklch(0.30 0.08 270)" },
-    { caption: "Bridal dreams in crimson", bg: "oklch(0.35 0.18 22)" },
-    { caption: "Colors of Maheshwar", bg: "oklch(0.55 0.10 160)" },
-  ];
-
   const whyChooseUs = [
     {
       icon: <Scissors size={24} />,
@@ -641,26 +629,29 @@ export default function HomePage() {
             </h2>
             <OrnamentDivider />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-            {instagramPosts.map((post) => (
-              <a
-                key={post.caption}
-                href="https://www.instagram.com/veera_handloom"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group aspect-square overflow-hidden rounded"
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {[
+              "DVgzx0NAVFP",
+              "DVjLU5VDDyJ",
+              "DVBuS97EtZ-",
+              "DVp0FSCjo61",
+              "DVlOl8ujGf3",
+            ].map((reelId) => (
+              <div
+                key={reelId}
+                className="aspect-[9/16] overflow-hidden rounded shadow-luxury"
               >
-                <div
+                <iframe
+                  src={`https://www.instagram.com/reel/${reelId}/embed/`}
                   className="w-full h-full"
-                  style={{ backgroundColor: post.bg }}
+                  scrolling="no"
+                  frameBorder="0"
+                  allowTransparency
+                  allowFullScreen
+                  loading="lazy"
+                  title={`Instagram Reel ${reelId}`}
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                  <Instagram
-                    size={20}
-                    className="text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              </a>
+              </div>
             ))}
           </div>
           <div className="text-center mt-8">
@@ -688,33 +679,58 @@ export default function HomePage() {
             <OrnamentDivider />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "The Art of Maheshwari Weaving",
-                desc: "Watch our artisans at work on traditional pit looms",
-                bg: "oklch(0.28 0.12 25)",
-              },
-              {
-                title: "Shop Tour: Veera Handloom",
-                desc: "A walkthrough of our Maheshwar atelier",
-                bg: "oklch(0.22 0.08 270)",
-              },
-              {
-                title: "Saree Draping Guide",
-                desc: "How to drape a Maheshwari saree in 5 different styles",
-                bg: "oklch(0.35 0.10 160)",
-              },
-            ].map((v) => (
+            {/* Featured YouTube Video Embed */}
+            <div className="md:col-span-2 rounded overflow-hidden shadow-luxury">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/zoiLb0NXJ4s"
+                  title="Veera Handloom – Maheshwari Saree"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full rounded"
+                />
+              </div>
+              <div className="p-4 bg-white border border-[oklch(0.90_0.01_80)]">
+                <h3 className="font-serif text-base font-semibold text-[oklch(0.12_0.015_30)] truncate">
+                  The Art of Maheshwari Weaving
+                </h3>
+                <p className="font-sans text-xs text-[oklch(0.55_0.04_50)] mt-1">
+                  Watch our artisans at work on traditional pit looms
+                </p>
+              </div>
+            </div>
+            {/* Sidebar video cards */}
+            <div className="flex flex-col gap-6">
+              {/* Real embed: Maheshwari Saree Story */}
+              <div className="rounded overflow-hidden shadow-luxury flex-1">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/u1EZfOXEdxY"
+                    title="Veera Handloom – Maheshwari Saree Story"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full rounded"
+                  />
+                </div>
+                <div className="p-4 bg-white border border-[oklch(0.90_0.01_80)]">
+                  <h3 className="font-serif text-base font-semibold text-[oklch(0.12_0.015_30)] truncate">
+                    Maheshwari Saree Story
+                  </h3>
+                  <p className="font-sans text-xs text-[oklch(0.55_0.04_50)] mt-1">
+                    Experience the craft and culture of Maheshwar
+                  </p>
+                </div>
+              </div>
+              {/* Placeholder: Saree Draping Guide */}
               <a
-                key={v.title}
-                href="https://youtube.com"
+                href="https://youtube.com/@maheshwarisari?si=kRRDCc9Se0bwJNTO"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded overflow-hidden shadow-luxury hover:shadow-luxury-lg transition-shadow"
+                className="group block rounded overflow-hidden shadow-luxury hover:shadow-luxury-lg transition-shadow flex-1"
               >
                 <div
                   className="relative aspect-video flex items-center justify-center"
-                  style={{ background: v.bg }}
+                  style={{ background: "oklch(0.35 0.10 160)" }}
                 >
                   <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Play size={22} className="text-white ml-1" fill="white" />
@@ -722,14 +738,14 @@ export default function HomePage() {
                 </div>
                 <div className="p-4 bg-white border border-[oklch(0.90_0.01_80)]">
                   <h3 className="font-serif text-base font-semibold text-[oklch(0.12_0.015_30)] truncate">
-                    {v.title}
+                    Saree Draping Guide
                   </h3>
                   <p className="font-sans text-xs text-[oklch(0.55_0.04_50)] mt-1">
-                    {v.desc}
+                    How to drape a Maheshwari saree in 5 different styles
                   </p>
                 </div>
               </a>
-            ))}
+            </div>
           </div>
         </div>
       </section>

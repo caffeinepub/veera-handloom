@@ -163,7 +163,7 @@ export default function ContactPage() {
                   <Instagram size={14} /> @veera_handloom
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://youtube.com/@maheshwarisari?si=kRRDCc9Se0bwJNTO"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2.5 rounded-full font-sans text-sm font-medium transition-all hover:opacity-90 text-white"
