@@ -150,6 +150,76 @@ export default function HomePage() {
 
   return (
     <div className="overflow-x-hidden page-transition">
+      {/* STORE PHOTO BANNER – TOP OF PAGE */}
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ height: "65vh", minHeight: "320px", maxHeight: "700px" }}
+        aria-label="Our Store – Maheshwar"
+      >
+        <img
+          src="/assets/uploads/IMG-20260312-WA0030-1.jpg"
+          alt="Veera Handloom Store – Maheshwar, Madhya Pradesh"
+          className="w-full h-full object-cover object-center"
+          style={{ display: "block" }}
+        />
+        {/* Cinematic gradient overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, oklch(0.08 0.015 30 / 0.88) 0%, oklch(0.12 0.015 30 / 0.45) 45%, oklch(0.15 0.01 30 / 0.18) 100%)",
+          }}
+        />
+        {/* Subtle gold frame lines */}
+        <div
+          className="absolute inset-4 pointer-events-none"
+          style={{
+            border: "1px solid oklch(0.72 0.12 82 / 0.25)",
+          }}
+        />
+        {/* Store label */}
+        <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 sm:pb-10 flex flex-col items-center justify-end text-center">
+          <p
+            className="font-sans text-xs tracking-[0.3em] uppercase mb-2"
+            style={{ color: "oklch(0.72 0.12 82 / 0.80)" }}
+          >
+            Established in the Heart of Narmada
+          </p>
+          <h2
+            className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-white"
+            style={{ textShadow: "0 2px 20px oklch(0 0 0 / 0.6)" }}
+          >
+            Our Store
+          </h2>
+          <p
+            className="font-sans text-sm sm:text-base mt-1"
+            style={{ color: "var(--gold)" }}
+          >
+            Maheshwar, Madhya Pradesh
+          </p>
+          {/* Gold ornament line */}
+          <div className="flex items-center gap-3 mt-3">
+            <div
+              className="h-px w-16"
+              style={{
+                background:
+                  "linear-gradient(to right, transparent, var(--gold))",
+              }}
+            />
+            <span style={{ color: "var(--gold)", fontSize: "10px" }}>
+              &#10022;
+            </span>
+            <div
+              className="h-px w-16"
+              style={{
+                background:
+                  "linear-gradient(to left, transparent, var(--gold))",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* HERO SECTION */}
       <section
         ref={heroRef}
