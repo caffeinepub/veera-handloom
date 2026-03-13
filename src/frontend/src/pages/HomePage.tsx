@@ -70,7 +70,7 @@ const extendedReviews = [...reviews, ...reviews];
 
 export default function HomePage() {
   const { addToCart } = useCart();
-  const featuredProducts = products.filter((p) => p.featured).slice(0, 6);
+  const featuredProducts = products.filter((p) => p.featured).slice(0, 7);
   const [wishlist, setWishlist] = useState<Set<string>>(new Set());
   const [cartAnimating, setCartAnimating] = useState<string | null>(null);
   const [tilt, setTilt] = useState<Record<string, { x: number; y: number }>>(
@@ -490,6 +490,13 @@ export default function HomePage() {
                       className="relative overflow-hidden rounded aspect-[3/4]"
                       style={{ background: product.gradient }}
                     >
+                      {product.image && (
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      )}
                       <div className="absolute inset-0 flex items-end p-4 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                         <button
                           type="button"

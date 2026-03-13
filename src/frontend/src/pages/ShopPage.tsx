@@ -76,6 +76,16 @@ export default function ShopPage() {
         </p>
       </div>
 
+      {/* Collection Banner Photo */}
+      <div className="w-full overflow-hidden" style={{ maxHeight: "480px" }}>
+        <img
+          src="/assets/uploads/IMG-20260312-WA0010-1-1.jpg"
+          alt="Veera Handloom Collection"
+          className="w-full object-cover object-center"
+          style={{ maxHeight: "480px" }}
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
         {/* Filters */}
         <div className="bg-white rounded-lg p-4 mb-8 shadow-xs border border-[oklch(0.90_0.01_80)]">
@@ -213,6 +223,13 @@ export default function ShopPage() {
                     className="relative aspect-[3/4] overflow-hidden"
                     style={{ background: product.gradient }}
                   >
+                    {product.image && (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                     {product.originalPrice && (
                       <div className="absolute top-2 left-2 px-2 py-0.5 bg-[var(--maroon)] text-white font-sans text-xs rounded">

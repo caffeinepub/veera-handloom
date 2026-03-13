@@ -194,9 +194,9 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* Brand Story */}
+      {/* Brand Story with Store Photo */}
       <section className="py-20 px-6 bg-[var(--cream)]">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <p className="section-label">Who We Are</p>
             <h2 className="font-serif text-3xl font-semibold text-[oklch(0.12_0.015_30)] mt-3">
@@ -220,26 +220,57 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="prose prose-lg max-w-none">
-            <p className="font-sans text-base leading-relaxed text-[oklch(0.35_0.03_40)] mb-6">
-              Veera Handloom was born from a deep reverence for one of India's
-              most celebrated textile traditions. Located at the foot of the
-              historic Ahilya Fort in Maheshwar, our atelier sits at the very
-              heart of the Maheshwari weaving legacy.
-            </p>
-            <p className="font-sans text-base leading-relaxed text-[oklch(0.35_0.03_40)] mb-6">
-              We work directly with families of master weavers who have
-              inherited their craft across generations, ensuring that every
-              saree we offer is a genuine expression of this extraordinary art
-              form. Our mission is simple: to connect discerning saree lovers
-              across India and the world with authentic, fairly compensated
-              handloom work.
-            </p>
-            <p className="font-sans text-base leading-relaxed text-[oklch(0.35_0.03_40)]">
-              Every purchase from Veera Handloom directly supports the artisan
-              families of Maheshwar and helps sustain an art form that has
-              survived for over two millennia.
-            </p>
+
+          {/* Story + Photo side by side */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="prose prose-lg max-w-none">
+              <p className="font-sans text-base leading-relaxed text-[oklch(0.35_0.03_40)] mb-6">
+                Veera Handloom was born from a deep reverence for one of India's
+                most celebrated textile traditions. Located at the foot of the
+                historic Ahilya Fort in Maheshwar, our atelier sits at the very
+                heart of the Maheshwari weaving legacy.
+              </p>
+              <p className="font-sans text-base leading-relaxed text-[oklch(0.35_0.03_40)] mb-6">
+                We work directly with families of master weavers who have
+                inherited their craft across generations, ensuring that every
+                saree we offer is a genuine expression of this extraordinary art
+                form. Our mission is simple: to connect discerning saree lovers
+                across India and the world with authentic, fairly compensated
+                handloom work.
+              </p>
+              <p className="font-sans text-base leading-relaxed text-[oklch(0.35_0.03_40)]">
+                Every purchase from Veera Handloom directly supports the artisan
+                families of Maheshwar and helps sustain an art form that has
+                survived for over two millennia.
+              </p>
+            </div>
+
+            {/* Store photo */}
+            <div className="relative rounded-xl overflow-hidden shadow-xl">
+              <img
+                src="/assets/uploads/IMG-20260312-WA0019-8.jpg"
+                alt="Inside Veera Handloom store — artisan carefully arranging sarees"
+                className="w-full object-cover"
+                style={{ maxHeight: "420px" }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 px-5 py-4"
+                style={{
+                  background:
+                    "linear-gradient(to top, oklch(0.10 0.015 30 / 0.85), transparent)",
+                }}
+              >
+                <p className="font-serif text-white text-sm">
+                  Inside Veera Handloom, Maheshwar
+                </p>
+                <p
+                  className="font-sans text-xs mt-0.5"
+                  style={{ color: "var(--gold)" }}
+                >
+                  98, Vinoba Bhave Marg, Near Ahilya Fort
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

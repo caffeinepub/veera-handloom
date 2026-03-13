@@ -11,6 +11,7 @@ export interface Product {
   colors: string[];
   featured: boolean;
   gradient: string;
+  image?: string;
 }
 
 export const collections = [
@@ -45,6 +46,164 @@ export const collections = [
 ];
 
 export const products: Product[] = [
+  {
+    id: "13",
+    name: "Rang Bahar Cotton Saree Collection",
+    collection: "Handloom Cotton Sarees",
+    fabric: "Cotton",
+    price: 2500,
+    description:
+      "A vibrant collection of hand-woven cotton sarees in a rainbow of festive colors — from lime green to sky blue, coral pink to deep navy. Each saree features a traditional gold zari border and is woven on the looms of Maheshwar.",
+    details: [
+      "100% Handloom Cotton",
+      "5.5 meters with blouse piece",
+      "Traditional gold zari border",
+      "Available in 10+ colors",
+      "Soft and breathable fabric",
+    ],
+    careInstructions:
+      "Hand wash in cold water. Dry in shade. Iron on medium heat.",
+    colors: ["Lime Green", "Orange", "Coral", "Sky Blue", "Navy", "Pink"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.72 0.14 145) 0%, oklch(0.60 0.16 40) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0008-1.jpg",
+  },
+  {
+    id: "14",
+    name: "Silk Zari Buti Saree – Multi Colour",
+    collection: "Maheshwari Silk Sarees",
+    fabric: "Silk",
+    price: 2800,
+    description:
+      "Pure Maheshwari silk sarees with fine gold buti (floral motifs) woven throughout the body and a rich gold zari border. Available in stunning shades — black, navy blue, purple, green, magenta, charcoal, and deep red.",
+    details: [
+      "Pure Maheshwari Silk",
+      "5.5 meters with blouse piece",
+      "Gold buti all over body",
+      "Heavy gold zari border",
+      "Multiple colors available",
+    ],
+    careInstructions:
+      "Dry clean only. Store in cotton muslin cloth. Avoid direct sunlight.",
+    colors: ["Black", "Navy", "Purple", "Green", "Magenta", "Red"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.18 0.02 280) 0%, oklch(0.35 0.12 300) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0009-2.jpg",
+  },
+  {
+    id: "15",
+    name: "Mauve Pink Pure Silk Saree",
+    collection: "Maheshwari Silk Sarees",
+    fabric: "Silk",
+    price: 2999,
+    description:
+      "Elegant mauve-pink pure silk saree with delicate silver buti motifs and a sophisticated woven border. A graceful choice for receptions, festive gatherings, and cultural events.",
+    details: [
+      "Pure Maheshwari Silk",
+      "6 meters with blouse piece",
+      "Silver buti motifs",
+      "Woven pallu with border design",
+      "Soft drape",
+    ],
+    careInstructions: "Dry clean only. Store folded in muslin cloth.",
+    colors: ["Mauve Pink", "Silver Buti"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.75 0.10 350) 0%, oklch(0.62 0.14 320) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0010-2-3.jpg",
+  },
+  {
+    id: "16",
+    name: "Rani Pink Silk Zari Saree",
+    collection: "Festive Saree Collection",
+    fabric: "Silk",
+    price: 2750,
+    description:
+      "Brilliantly vibrant rani pink silk saree with all-over gold zari shimmer and a striking red-gold pallu. Perfect for Diwali, weddings, and festive celebrations — this saree commands attention wherever you go.",
+    details: [
+      "Pure Maheshwari Silk",
+      "6 meters with blouse piece",
+      "All-over gold zari weave",
+      "Bold contrasting pallu",
+      "Festive special",
+    ],
+    careInstructions:
+      "Dry clean only. Store with camphor to protect zari threads.",
+    colors: ["Rani Pink", "Gold Zari"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.62 0.22 0) 0%, oklch(0.50 0.18 355) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0025-4.jpg",
+  },
+  {
+    id: "17",
+    name: "Veera Handloom Signature Saree",
+    collection: "Traditional Zari Border Sarees",
+    fabric: "Silk",
+    price: 2600,
+    description:
+      "Straight from the heart of our Maheshwar store — this signature saree is handpicked by our artisan owner. A beautiful red silk saree with rich gold zari border, folded with care and ready for you.",
+    details: [
+      "Pure Maheshwari Silk",
+      "5.5 meters",
+      "Handpicked by store owner",
+      "Traditional gold zari border",
+      "Direct from Maheshwar",
+    ],
+    careInstructions: "Dry clean only. Store in the provided muslin wrap.",
+    colors: ["Deep Red", "Gold Border"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.40 0.18 22) 0%, oklch(0.28 0.12 20) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0026-5.jpg",
+  },
+  {
+    id: "18",
+    name: "Orange Gold Tissue Silk Saree",
+    collection: "Festive Saree Collection",
+    fabric: "Silk",
+    price: 2900,
+    description:
+      "Resplendent orange tissue silk saree with a deep magenta border and luminous gold zari work. The shimmering tissue fabric catches light like liquid gold — perfect for grand festive occasions.",
+    details: [
+      "Tissue Silk",
+      "6 meters with blouse piece",
+      "Gold zari shimmer weave",
+      "Magenta contrast border",
+      "Festival & wedding wear",
+    ],
+    careInstructions: "Dry clean only. Handle gently to preserve tissue weave.",
+    colors: ["Orange Gold", "Magenta Border"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.72 0.16 52) 0%, oklch(0.58 0.18 48) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0029-6.jpg",
+  },
+  {
+    id: "19",
+    name: "Teal Green Silk with Red Pallu",
+    collection: "Maheshwari Silk Sarees",
+    fabric: "Silk",
+    price: 3000,
+    description:
+      "A striking combination of deep teal green and vibrant red — this Maheshwari silk saree with gold buti motifs and a contrasting zari-work red pallu is a masterpiece of color and craft.",
+    details: [
+      "Pure Maheshwari Silk",
+      "6 meters with blouse piece",
+      "Gold buti motifs throughout",
+      "Contrasting red zari pallu",
+      "Unique dual-color design",
+    ],
+    careInstructions:
+      "Dry clean only. Store away from moisture and direct light.",
+    colors: ["Teal Green", "Red Pallu", "Gold Buti"],
+    featured: true,
+    gradient:
+      "linear-gradient(135deg, oklch(0.48 0.14 175) 0%, oklch(0.40 0.18 22) 100%)",
+    image: "/assets/uploads/IMG-20260312-WA0027-1-7.jpg",
+  },
   {
     id: "1",
     name: "Royal Maheshwari Silk Saree",

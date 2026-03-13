@@ -79,14 +79,22 @@ export default function ProductPage() {
               className="w-full aspect-[3/4] rounded-lg overflow-hidden shadow-luxury-lg"
               style={{ background: product.gradient }}
             >
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center text-white/40">
-                  <div className="w-24 h-24 border-2 border-white/20 rounded-full mx-auto mb-3" />
-                  <p className="font-sans text-xs tracking-widest uppercase">
-                    Maheshwari Handloom
-                  </p>
+              {product.image ? (
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center text-white/40">
+                    <div className="w-24 h-24 border-2 border-white/20 rounded-full mx-auto mb-3" />
+                    <p className="font-sans text-xs tracking-widest uppercase">
+                      Maheshwari Handloom
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             {/* Thumbnail strip */}
             <div className="flex gap-3 mt-3">
@@ -98,7 +106,15 @@ export default function ProductPage() {
                     background: product.gradient,
                     opacity: i === 0 ? 1 : 0.6,
                   }}
-                />
+                >
+                  {product.image && i === 0 && (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -342,9 +358,17 @@ export default function ProductPage() {
                   className="product-card-hover group block bg-white rounded overflow-hidden shadow-xs border border-[oklch(0.92_0.01_80)]"
                 >
                   <div
-                    className="aspect-[3/4]"
+                    className="relative aspect-[3/4] overflow-hidden"
                     style={{ background: p.gradient }}
-                  />
+                  >
+                    {p.image && (
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
                   <div className="p-4">
                     <p
                       className="font-sans text-xs"
