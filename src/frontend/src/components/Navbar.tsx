@@ -14,7 +14,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
-  const { cartCount, cartItems, removeFromCart, cartTotal } = useCart();
+  const { cartCount, cartItems, removeFromCart } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [musicPlaying, setMusicPlaying] = useState(false);
@@ -103,9 +103,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" data-ocid="nav.home_link" className="flex-shrink-0">
             <img
-              src="/assets/generated/veera-logo-transparent.dim_600x300.png"
+              src="/assets/uploads/veera-logo.jpg"
               alt="Veera Handloom"
               className="h-10 md:h-14 w-auto object-contain"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  "/assets/generated/veera-logo-transparent.dim_600x300.png";
+              }}
             />
           </Link>
 
@@ -215,12 +219,6 @@ export default function Navbar() {
                               <p className="font-sans text-xs text-[oklch(0.55_0.04_50)] mt-0.5">
                                 Qty: {item.quantity}
                               </p>
-                              <p
-                                className="font-sans text-sm font-semibold mt-1"
-                                style={{ color: "var(--maroon)" }}
-                              >
-                                ₹{item.product.price.toLocaleString("en-IN")}
-                              </p>
                             </div>
                             <button
                               type="button"
@@ -233,17 +231,6 @@ export default function Navbar() {
                         ))}
                       </div>
                       <div className="pt-4 border-t border-[oklch(0.88_0.018_80)]">
-                        <div className="flex justify-between mb-4">
-                          <span className="font-sans text-sm font-medium">
-                            Total
-                          </span>
-                          <span
-                            className="font-serif font-semibold"
-                            style={{ color: "var(--maroon)" }}
-                          >
-                            ₹{cartTotal.toLocaleString("en-IN")}
-                          </span>
-                        </div>
                         <a
                           href={`https://wa.me/918962203433?text=Hello%20Veera%20Handloom%2C%20I%20would%20like%20to%20order%3A%20${encodeURIComponent(cartItems.map((i) => `${i.product.name} (Qty: ${i.quantity})`).join(", "))}`}
                           target="_blank"

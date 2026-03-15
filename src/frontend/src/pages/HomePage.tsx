@@ -5,14 +5,13 @@ import {
   Globe2,
   Instagram,
   MapPin,
-  Play,
   Scissors,
   Sparkles,
   Star,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useCart } from "../context/CartContext";
-import { collections, products, reviews } from "../data/products";
+import { products, reviews } from "../data/products";
 
 function OrnamentDivider({ light = false }: { light?: boolean }) {
   return (
@@ -77,7 +76,6 @@ export default function HomePage() {
     {},
   );
   const whyRef = useReveal();
-  const heroRef = useRef<HTMLElement>(null);
   const [heroParallax, setHeroParallax] = useState(0);
 
   useEffect(() => {
@@ -116,14 +114,6 @@ export default function HomePage() {
   const handleCardMouseLeave = (id: string) => {
     setTilt((prev) => ({ ...prev, [id]: { x: 0, y: 0 } }));
   };
-
-  const collectionGradients = [
-    "linear-gradient(135deg, oklch(0.32 0.14 22) 0%, oklch(0.22 0.08 22) 100%)",
-    "linear-gradient(135deg, oklch(0.55 0.08 195) 0%, oklch(0.38 0.10 192) 100%)",
-    "linear-gradient(135deg, oklch(0.65 0.12 82) 0%, oklch(0.50 0.14 78) 100%)",
-    "linear-gradient(135deg, oklch(0.35 0.18 355) 0%, oklch(0.25 0.12 355) 100%)",
-    "linear-gradient(135deg, oklch(0.40 0.10 270) 0%, oklch(0.30 0.08 270) 100%)",
-  ];
 
   const whyChooseUs = [
     {
@@ -222,7 +212,6 @@ export default function HomePage() {
 
       {/* HERO SECTION */}
       <section
-        ref={heroRef}
         className="relative min-h-screen flex items-center justify-center text-center silk-texture overflow-hidden"
         style={{
           background:
@@ -416,50 +405,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COLLECTIONS SECTION */}
-      <section className="py-20 px-6 bg-[var(--cream)]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="section-label">Curated for You</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[oklch(0.12_0.015_30)] mt-3">
-              Featured Collections
-            </h2>
-            <OrnamentDivider />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-            {collections.map((col, i) => (
-              <Link
-                key={col.id}
-                to="/shop"
-                className="collection-card-hover group block rounded overflow-hidden shadow-luxury"
-              >
-                <div
-                  className="h-48 sm:h-52 relative overflow-hidden"
-                  style={{ background: collectionGradients[i] }}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                    <div className="w-24 h-24 border-2 border-white rounded-full" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="font-serif text-base font-semibold text-white leading-tight">
-                      {col.name}
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-white p-4">
-                  <p className="font-sans text-xs text-[oklch(0.55_0.04_50)] line-clamp-2">
-                    {col.description}
-                  </p>
-                  <p className="font-sans text-xs text-[var(--maroon)] mt-2 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Explore <ChevronRight size={12} />
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BEST SELLERS SECTION */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -545,19 +490,6 @@ export default function HomePage() {
                     <h3 className="font-serif text-base font-semibold text-[oklch(0.12_0.015_30)] mt-1 truncate">
                       {product.name}
                     </h3>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span
-                        className="font-sans text-sm font-semibold"
-                        style={{ color: "var(--maroon)" }}
-                      >
-                        ₹{product.price.toLocaleString("en-IN")}
-                      </span>
-                      {product.originalPrice && (
-                        <span className="font-sans text-xs text-[oklch(0.60_0.04_50)] line-through">
-                          ₹{product.originalPrice.toLocaleString("en-IN")}
-                        </span>
-                      )}
-                    </div>
                   </div>
                 </div>
               );
@@ -798,30 +730,26 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              {/* Placeholder: Saree Draping Guide */}
-              <a
-                href="https://youtube.com/@maheshwarisari?si=kRRDCc9Se0bwJNTO"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded overflow-hidden shadow-luxury hover:shadow-luxury-lg transition-shadow flex-1"
-              >
-                <div
-                  className="relative aspect-video flex items-center justify-center"
-                  style={{ background: "oklch(0.35 0.10 160)" }}
-                >
-                  <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play size={22} className="text-white ml-1" fill="white" />
-                  </div>
+              {/* Google Drive Video: Saree Collection */}
+              <div className="rounded overflow-hidden shadow-luxury flex-1">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://drive.google.com/file/d/12s6UnFJ-MtJIzd0PBZoLCKoN_yyyJ04l/preview"
+                    title="Veera Handloom – Saree Collection"
+                    allow="autoplay"
+                    allowFullScreen
+                    className="w-full h-full rounded"
+                  />
                 </div>
                 <div className="p-4 bg-white border border-[oklch(0.90_0.01_80)]">
                   <h3 className="font-serif text-base font-semibold text-[oklch(0.12_0.015_30)] truncate">
-                    Saree Draping Guide
+                    Our Saree Collection
                   </h3>
                   <p className="font-sans text-xs text-[oklch(0.55_0.04_50)] mt-1">
-                    How to drape a Maheshwari saree in 5 different styles
+                    Explore the beauty of authentic Maheshwari handloom sarees
                   </p>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>

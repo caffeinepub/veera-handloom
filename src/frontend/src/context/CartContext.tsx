@@ -16,7 +16,6 @@ interface CartContextType {
   wishlist: Product[];
   addToCart: (product: Product, qty?: number) => void;
   removeFromCart: (productId: string) => void;
-  updateQuantity: (productId: string, qty: number) => void;
   toggleWishlist: (product: Product) => void;
   isInWishlist: (productId: string) => boolean;
   cartTotal: number;
@@ -47,18 +46,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCartItems((prev) => prev.filter((i) => i.product.id !== productId));
   };
 
-  const updateQuantity = (productId: string, qty: number) => {
-    if (qty <= 0) {
-      removeFromCart(productId);
-      return;
-    }
-    setCartItems((prev) =>
-      prev.map((i) =>
-        i.product.id === productId ? { ...i, quantity: qty } : i,
-      ),
-    );
-  };
-
   const toggleWishlist = (product: Product) => {
     setWishlist((prev) => {
       const exists = prev.find((p) => p.id === product.id);
@@ -83,7 +70,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
         wishlist,
         addToCart,
         removeFromCart,
-        updateQuantity,
         toggleWishlist,
         isInWishlist,
         cartTotal,

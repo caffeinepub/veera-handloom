@@ -15,7 +15,6 @@ export default function ShopPage() {
   const { addToCart, toggleWishlist, isInWishlist } = useCart();
   const [selectedCollection, setSelectedCollection] = useState("all");
   const [selectedFabric, setSelectedFabric] = useState("all");
-  const [selectedPrice, setSelectedPrice] = useState("all");
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const filtered = useMemo(() => {
@@ -27,17 +26,9 @@ export default function ShopPage() {
         p.fabric.toLowerCase() !== selectedFabric.toLowerCase()
       )
         return false;
-      if (selectedPrice !== "all") {
-        if (selectedPrice === "under5k" && p.price >= 5000) return false;
-        if (selectedPrice === "5k-15k" && (p.price < 5000 || p.price > 15000))
-          return false;
-        if (selectedPrice === "15k-30k" && (p.price < 15000 || p.price > 30000))
-          return false;
-        if (selectedPrice === "above30k" && p.price <= 30000) return false;
-      }
       return true;
     });
-  }, [selectedCollection, selectedFabric, selectedPrice]);
+  }, [selectedCollection, selectedFabric]);
 
   const activeFilters = [
     selectedCollection !== "all" && {
@@ -49,11 +40,6 @@ export default function ShopPage() {
       key: "fabric",
       label: selectedFabric,
       clear: () => setSelectedFabric("all"),
-    },
-    selectedPrice !== "all" && {
-      key: "price",
-      label: selectedPrice,
-      clear: () => setSelectedPrice("all"),
     },
   ].filter(Boolean) as { key: string; label: string; clear: () => void }[];
 
@@ -138,27 +124,12 @@ export default function ShopPage() {
                   </SelectContent>
                 </Select>
               </div>
-              <div>
-                <Select value={selectedPrice} onValueChange={setSelectedPrice}>
-                  <SelectTrigger className="w-44 font-sans text-sm">
-                    <SelectValue placeholder="All Prices" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Prices</SelectItem>
-                    <SelectItem value="under5k">Under ₹5,000</SelectItem>
-                    <SelectItem value="5k-15k">₹5,000 – ₹15,000</SelectItem>
-                    <SelectItem value="15k-30k">₹15,000 – ₹30,000</SelectItem>
-                    <SelectItem value="above30k">Above ₹30,000</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
               {activeFilters.length > 0 && (
                 <button
                   type="button"
                   onClick={() => {
                     setSelectedCollection("all");
                     setSelectedFabric("all");
-                    setSelectedPrice("all");
                   }}
                   className="font-sans text-xs text-[var(--maroon)] hover:underline flex items-center gap-1"
                 >
@@ -204,7 +175,6 @@ export default function ShopPage() {
               onClick={() => {
                 setSelectedCollection("all");
                 setSelectedFabric("all");
-                setSelectedPrice("all");
               }}
               className="mt-4 font-sans text-sm text-[var(--maroon)] hover:underline"
             >
@@ -270,21 +240,6 @@ export default function ShopPage() {
                   <h3 className="font-serif text-sm font-semibold text-[oklch(0.15_0.015_30)] mt-1 truncate">
                     {product.name}
                   </h3>
-                  <div className="flex items-center justify-between mt-2">
-                    <div>
-                      <span
-                        className="font-sans text-sm font-semibold"
-                        style={{ color: "var(--maroon)" }}
-                      >
-                        ₹{product.price.toLocaleString("en-IN")}
-                      </span>
-                      {product.originalPrice && (
-                        <span className="font-sans text-xs text-[oklch(0.60_0.04_50)] line-through ml-1">
-                          ₹{product.originalPrice.toLocaleString("en-IN")}
-                        </span>
-                      )}
-                    </div>
-                  </div>
                   <button
                     type="button"
                     data-ocid="product.add_to_cart_button"

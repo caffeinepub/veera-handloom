@@ -47,7 +47,7 @@ export default function ProductPage() {
     toast.success(`${product.name} added to cart!`);
   };
 
-  const whatsappMsg = `Hello Veera Handloom, I would like to order:%0A%0AProduct: ${encodeURIComponent(product.name)}%0APrice: ₹${product.price.toLocaleString("en-IN")}%0AQuantity: ${qty}`;
+  const whatsappMsg = `Hello Veera Handloom, I would like to order:%0A%0AProduct: ${encodeURIComponent(product.name)}%0AQuantity: ${qty}`;
 
   return (
     <div className="pt-16 md:pt-20 min-h-screen bg-[var(--cream)]">
@@ -125,31 +125,6 @@ export default function ProductPage() {
             <h1 className="font-serif text-3xl md:text-4xl font-semibold text-[oklch(0.12_0.015_30)] mt-2 leading-tight">
               {product.name}
             </h1>
-
-            <div className="flex items-center gap-3 mt-4">
-              <span
-                className="font-serif text-2xl font-semibold"
-                style={{ color: "var(--maroon)" }}
-              >
-                ₹{product.price.toLocaleString("en-IN")}
-              </span>
-              {product.originalPrice && (
-                <span className="font-sans text-base text-[oklch(0.60_0.04_50)] line-through">
-                  ₹{product.originalPrice.toLocaleString("en-IN")}
-                </span>
-              )}
-              {product.originalPrice && (
-                <span
-                  className="px-2 py-0.5 rounded font-sans text-xs font-medium text-white"
-                  style={{ backgroundColor: "var(--maroon)" }}
-                >
-                  {Math.round(
-                    (1 - product.price / product.originalPrice) * 100,
-                  )}
-                  % OFF
-                </span>
-              )}
-            </div>
 
             <div className="mt-6">
               <p className="font-sans text-sm leading-relaxed text-[oklch(0.40_0.03_50)]">
@@ -379,12 +354,6 @@ export default function ProductPage() {
                     <h3 className="font-serif text-base font-semibold mt-1 truncate">
                       {p.name}
                     </h3>
-                    <p
-                      className="font-sans text-sm font-semibold mt-1"
-                      style={{ color: "var(--maroon)" }}
-                    >
-                      ₹{p.price.toLocaleString("en-IN")}
-                    </p>
                   </div>
                 </Link>
               ))}

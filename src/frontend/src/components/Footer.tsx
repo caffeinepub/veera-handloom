@@ -16,11 +16,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img
-              src="/assets/generated/veera-logo-transparent.dim_600x300.png"
+              src="/assets/uploads/veera-logo.jpg"
               alt="Veera Handloom"
               className="h-12 w-auto mb-4"
-              style={{
-                filter: "sepia(1) saturate(3) hue-rotate(5deg) brightness(0.4)",
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  "/assets/generated/veera-logo-transparent.dim_600x300.png";
               }}
             />
             <p className="font-sans text-sm leading-relaxed text-[oklch(0.38_0.06_55)] mt-3">
