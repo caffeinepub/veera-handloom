@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, Instagram, MapPin, Phone, Youtube } from "lucide-react";
+import { Clock, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
             />
             <p className="font-sans text-sm leading-relaxed text-[oklch(0.38_0.06_55)] mt-3">
               Authentic Maheshwari handloom sarees crafted by skilled artisans
-              in Maheshwar, Madhya Pradesh. Preserving 2,000 years of weaving
+              in Maheshwar, Madhya Pradesh. Preserving 200 years of weaving
               heritage.
             </p>
             <div className="flex gap-3 mt-5">
@@ -56,6 +56,13 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-[oklch(0.72_0.14_65)] hover:text-white transition-all text-[oklch(0.40_0.10_55)]"
               >
                 <Phone size={15} />
+              </a>
+              <a
+                href="mailto:veerahandloom554@gmail.com"
+                style={{ border: "1.5px solid oklch(0.65 0.14 65)" }}
+                className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-[oklch(0.72_0.14_65)] hover:text-white transition-all text-[oklch(0.40_0.10_55)]"
+              >
+                <Mail size={15} />
               </a>
             </div>
           </div>
@@ -179,6 +186,19 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex gap-2.5 items-center">
+                <Mail
+                  size={14}
+                  className="flex-shrink-0"
+                  style={{ color: "oklch(0.50 0.16 58)" }}
+                />
+                <a
+                  href="mailto:veerahandloom554@gmail.com"
+                  className="text-[oklch(0.35_0.07_55)] hover:text-[oklch(0.45_0.16_60)] transition-colors"
+                >
+                  veerahandloom554@gmail.com
+                </a>
+              </li>
+              <li className="flex gap-2.5 items-center">
                 <Clock
                   size={14}
                   className="flex-shrink-0"
@@ -200,9 +220,15 @@ export default function Footer() {
             © {new Date().getFullYear()} Veera Handloom. All rights reserved.
             Maheshwar, Madhya Pradesh, India.
           </p>
-          <p className="font-sans text-xs text-[oklch(0.42_0.08_55)]">
-            Preserving India's handloom heritage since generations.
-          </p>
+          <div className="flex items-center gap-2 font-sans text-xs text-[oklch(0.42_0.08_55)]">
+            <span className="cursor-pointer hover:text-[oklch(0.45_0.16_60)] transition-colors">
+              Privacy Policy
+            </span>
+            <span>|</span>
+            <span className="cursor-pointer hover:text-[oklch(0.45_0.16_60)] transition-colors">
+              Terms &amp; Condition
+            </span>
+          </div>
         </div>
       </div>
     </footer>

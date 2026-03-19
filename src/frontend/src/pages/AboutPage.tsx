@@ -346,13 +346,13 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="section-label mb-4">2,000 Years of Legacy</p>
+              <p className="section-label mb-4">200 Years of Legacy</p>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-white mb-6">
                 The Heritage of Maheshwar
               </h2>
               <p className="font-sans text-sm leading-relaxed text-[oklch(0.70_0.03_60)] mb-4">
                 Maheshwar, on the banks of the sacred Narmada in Madhya Pradesh,
-                has been a center of handloom weaving for over 2,000 years. The
+                has been a center of handloom weaving for over 200 years. The
                 city's textile tradition reached its golden age under the
                 patronage of the great Maratha queen, Ahilyabai Holkar, in the
                 18th century.

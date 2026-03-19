@@ -565,7 +565,7 @@ export default function HomePage() {
               <p className="font-sans text-sm leading-relaxed text-[oklch(0.75_0.03_60)] mb-4">
                 Nestled on the banks of the sacred Narmada river, Maheshwar has
                 been the cradle of India's finest handloom tradition for over
-                2,000 years. Under the patronage of the great Queen Ahilyabai
+                200 years. Under the patronage of the great Queen Ahilyabai
                 Holkar in the 18th century, the art of Maheshwari weaving
                 reached its zenith.
               </p>

@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   Clock,
   Instagram,
+  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -95,6 +96,27 @@ export default function ContactPage() {
                     style={{ color: "var(--maroon)" }}
                   >
                     +91 89622 03433
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-center p-5 rounded-lg bg-[var(--cream)] border border-[oklch(0.88_0.018_80)]">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "#EA4335" }}
+                >
+                  <Mail size={16} className="text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-sans text-xs tracking-widest uppercase text-[oklch(0.55_0.04_50)] font-medium mb-1">
+                    Email
+                  </p>
+                  <a
+                    href="mailto:veerahandloom554@gmail.com"
+                    className="font-sans text-sm font-medium hover:underline"
+                    style={{ color: "#EA4335" }}
+                  >
+                    veerahandloom554@gmail.com
                   </a>
                 </div>
               </div>
